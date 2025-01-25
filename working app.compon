@@ -35,8 +35,8 @@
 
       <!-- <video [ngClass]="isEmpty() ? 'vid-min' : 'vid-max'" -->
       <video
-             [muted]="'muted'" muted autoplay loop>
-             <source src="./sample_video.mp4" type="video/mp4"  >
+             [muted]="'muted'" autoplay loop>
+             <source src="sample_video.mp4" type="video/mp4"  >
         The viewport does not support the video tag.
       </video>
 
@@ -57,4 +57,3 @@
   </div>
 
 </div> <!-- end of queue-container -->
-
