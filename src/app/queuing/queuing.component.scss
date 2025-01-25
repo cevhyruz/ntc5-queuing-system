@@ -78,21 +78,29 @@ th {
 }
 
 /* 10 column height - the height of th  */
-td { height: calc(calc(100vh - 110px) / 10); }
+td {
+  height: calc(calc(100vh - 97px) / 10);
+  font-size: 2.1vw;
+  color: #2c3e50;
+}
+td:nth-child(even) {
+  font-size: 2.3vw;
+}
+td:nth-child(odd) {
 
+}
+
+.mat-column-id {
+  border-left: 5px solid #f9f9f9;
+  width: 2% !important;
+}
 
 .mat-column-referenceno {
   border-left: 5px solid #f9f9f9;
-  width: 30% !important;
+  width: 33% !important;
 }
 /* 3840 x 2160 */
 
-/* window */
-td:nth-child(odd) {
-  font-size: 2.2vw;
-  line-height: 1.0em;
-  color: #2c3e50;
-}
 
 table tr { border: 1px solid red !important; }
 table tr:nth-child(even) { background-color: #f2f2f2; }
@@ -104,19 +112,18 @@ table tr:hover { cursor: pointer; }
   position: fixed;
   grid-template-columns: 1fr;
   bottom: 0;
-  height: 52px;
+  height: 40px;
   /* height: 8vh; */
   background-color: #2288E6;
   color: white;
   > marquee {
-    /* padding: 1vh; */
-    padding: 3px;
+    /* padding: 3px; */
     font-weight: bold;
-    font-size: 27px;
+    font-size: 24px;
     /* font-size: 2vw; */
     /* line-height: 2vw; */
     justify-content: center;
-    margin-top: 13px;
+    margin-top: 7px;
     margin-right: 10px;
     margin-left: 10px;
 
@@ -151,11 +158,11 @@ mat-card {
   }
   #stdTime {
     font-weight: bold;
-    font-size: 58px;
+    font-size: 48px;
     /* font-size: 3.9vw; */
     line-height: 1em;
     margin: 5px;
-    margin-top: 5px;
+    margin-top: 2vw;
   }
   #stdDate {
     font-weight: bold;
@@ -189,13 +196,13 @@ mat-card {
 }
 
 
-/* .vid-min { */
-/*   border: 10px solid #dbdbdb; */
-/*   height: 41vh; */
-/*   transition: height  0.5s ease; */
-/*   border-radius: 5px; */
-/*   background-color: #222222; */
-/* } */
+.vid-min {
+  height: 15vw;
+  width: 80%;
+  transition: height, width  0.5s ease;
+  border-radius: 5px;
+  background-color: #222222;
+}
 
 .vid-max {
   position: fixed;
@@ -210,4 +217,11 @@ mat-card {
   z-index: 1000;
 }
 
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust based on the container height */
+}
 

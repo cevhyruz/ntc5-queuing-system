@@ -23,18 +23,6 @@ export class DateTimeService implements OnDestroy {
 
 
   private syncWithServerTime() {
-    interval(60000) // 1 minute refresh rate
-      .pipe(
-        startWith(0),
-        switchMap( () => this.fetchServerTime() ),
-        shareReplay(1)
-      )
-      .subscribe({
-        next: (serverTime) => {
-          this.currentDateTime$.next(serverTime)
-        },
-        error: (err) => console.error('Failed to fetch server time', err),
-      });
     interval(1000).subscribe(() => {
       const currentTime = this.currentDateTime$.value;
       this.currentDateTime$.next(new Date(currentTime.getTime() + 1000));

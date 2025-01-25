@@ -93,14 +93,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    // this.zone.runOutsideAngular(() => {
-    //   setInterval(() => {
-    //     this.zone.run(() => {
-    //       this.pollChange()
-    //       this.isEmpty()
-    //     });
-    //   }, 1000);
-    // });
+    this.zone.runOutsideAngular(() => {
+      setInterval(() => {
+        this.zone.run(() => {
+          this.pollChange()
+          this.isEmpty()
+        });
+      }, 1000);
+    });
   }
 
   isEmpty() {

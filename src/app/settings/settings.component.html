@@ -1,0 +1,78 @@
+<div class="container">
+  <h3>Queuing System</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="site-title">Announcement message</label>
+      <input
+        type="text"
+        id="site-title"
+        name="site-title"
+        placeholder="Enter your site title"
+        [(ngModel)]="settings.siteTitle"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="site-description">Site Description</label>
+      <textarea
+        id="site-description"
+        name="site-description"
+        rows="4"
+        placeholder="Enter your site description"
+        [(ngModel)]="settings.siteDescription"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="video-upload">Currently playing Advertisement</label>
+      <label class="custom-upload" for="video-upload">Choose another video</label>
+      <video id="video-preview"
+         *ngIf="videoPreviewUrl"
+         [src]="videoPreviewUrl"
+         [muted]="'muted'" muted autoplay loop>
+      </video>
+      <input
+        type="file"
+        id="video-upload"
+        name="video-upload"
+        accept="video/*"
+        (change)="onVideoUpload($event)"
+      />
+    </div>
+    <div class="form-group">
+      <label for="color-scheme">Color Scheme</label>
+      <select
+        id="color-scheme"
+        name="color-scheme"
+        [(ngModel)]="settings.colorScheme"
+      >
+        <option value="all">Play all videos</option>
+        <option value="selected">Play only the selected video above</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>
+        <input
+          type="checkbox"
+          name="show-header"
+          [(ngModel)]="settings.showHeader"
+        />
+        Display Header
+      </label>
+    </div>
+    <div class="form-group">
+      <label>
+        <input
+          type="checkbox"
+          name="enable-footer"
+          [(ngModel)]="settings.enableFooter"
+        />
+        Enable Footer
+      </label>
+    </div>
+    <div class="form-actions">
+      <button mat-flat-button routerLink='/queuing' type="submit">
+        Save Settings
+      </button>
+    </div>
+  </form>
+</div>

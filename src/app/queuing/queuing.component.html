@@ -6,14 +6,13 @@
       <!-- Routing No -->
       <ng-container matColumnDef="window">
         <th mat-header-cell *matHeaderCellDef> Window </th>
-        <td mat-cell *matCellDef="let queue"> {{ queue.name }} </td>
+        <td mat-cell *matCellDef="let queue"> {{ queue.StagesName }} </td>
       </ng-container>
-
 
       <!-- Routing No -->
       <ng-container matColumnDef="referenceno">
         <th mat-header-cell *matHeaderCellDef> Routing No. </th>
-        <td mat-cell *matCellDef="let queue"> {{ queue.referenceno }} </td>
+        <td mat-cell *matCellDef="let queue"> L359, L359, L359{{ queue.referenceno }} </td>
       </ng-container>
 
 
@@ -33,12 +32,18 @@
     <div class="right-column-container">
       <h2>Queuing System</h2>
 
-      <!-- <video [ngClass]="isEmpty() ? 'vid-min' : 'vid-max'" -->
-      <video
-             [muted]="'muted'" muted autoplay loop>
-             <source src="./sample_video.mp4" type="video/mp4"  >
-        The viewport does not support the video tag.
-      </video>
+    <video autoplay loop [ngClass]="videoClass"
+           [muted]="'muted'" muted autoplay loop>
+           <source [src]="selectedVideoUrl" type="video/mp4"  >
+      The viewport does not support the video tag.
+    </video>
+
+    <!-- <video autoplay loop [ngClass]="videoClass" -->
+    <!--        [muted]="'muted'" muted autoplay loop> -->
+    <!--        <source src="./sample_video.mp4" type="video/mp4"  > -->
+    <!--   The viewport does not support the video tag. -->
+    <!-- </video> -->
+
 
       <div id="datetime-container">
         <h3 id="stdTime">{{ dateTime$ | async | date:'h:mm:ss a' }}</h3>
@@ -57,4 +62,5 @@
   </div>
 
 </div> <!-- end of queue-container -->
+
 
